@@ -1,0 +1,59 @@
+
+.main{
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    background-color: rgb(182, 204, 203);
+}
+.main mat-card{
+    margin-bottom: 10px;
+}
+.charts{
+    width: 100%;
+    min-height: 400px;
+    float: left;
+}
+.charts .chart1{
+    width: 49.5%;
+    float: left;
+    margin-right: 10px;
+}
+.charts .chart2{
+    width: 49.7%;
+    float: left;
+}
+.drop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drop .select{
+    margin-left: 50px;
+    margin-right: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.drop mat-form-field{
+    padding: 0px;
+    padding-bottom: 0px;
+}
+.main> mat-card:first-child{
+    padding-top: 5px;
+}
+.energy{
+    display: flex;
+    justify-content: center;
+    justify-content:space-evenly;
+    font-weight: bold;
+}
+
+.energy .edetail{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.energy span:last-child{
+    color: red;
+}
+.message{
+    float: right;
+}

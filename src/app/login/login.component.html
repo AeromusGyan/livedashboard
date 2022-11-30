@@ -1,0 +1,35 @@
+
+<div class="outer">
+    <mat-card class="card">
+        <div class="header">
+            <div class="title">
+                NOKIA
+            </div>
+            <div class="subtitle">
+                FACILIVISS
+            </div>
+        </div>
+        <div class="content">
+            <form [formGroup]="loginForm">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput formControlName="email">
+                    <mat-icon matPrefix>account_circle</mat-icon>
+                    <mat-error>Please enter valid email</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input [type]="hide ? 'password' : 'text'" matInput formControlName="password">
+                    <mat-icon matPrefix>lock</mat-icon>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                    <mat-error>Password should be minimum 6 characters</mat-error>
+                </mat-form-field>
+                <p class="fpass">Forget Password?</p>
+                <button class="btn" mat-raised-button color="primary" (click)="onLogin()">Submit</button>
+            </form>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,90 @@
+<app-header></app-header>
+<div class="main">
+    <mat-card>
+        <div class="drop">
+            <span class="select">Floor : </span>
+            <mat-form-field appearance="fill">
+                <mat-label>Floor</mat-label>
+                <mat-select>
+                    <mat-option value="1">1</mat-option>
+                    <mat-option value="2">2</mat-option>
+                    <mat-option value="3">3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span class="select">Section : </span>
+            <mat-form-field appearance="fill">
+                <mat-label>Section</mat-label>
+                <mat-select>
+                    <mat-option value="Lab 1">Lab 1</mat-option>
+                    <mat-option value="Lab 2">Lab 2</mat-option>
+                    <mat-option value="Lab 3">Lab 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span class="select">View : </span>
+            <mat-form-field appearance="fill">
+                <mat-label>View</mat-label>
+                <mat-select>
+                    <mat-option value="Individual">Individual</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span class="select">Meter : </span>
+            <mat-form-field appearance="fill">
+                <mat-label>Meter</mat-label>
+                <mat-select>
+                    <mat-option value="Meter 1">Meter 1</mat-option>
+                    <mat-option value="Meter 2">Meter 2</mat-option>
+                    <mat-option value="Meter 3">Meter 3</mat-option>
+                    <mat-option value="Meter 4">Meter 4</mat-option>
+                    <mat-option value="Meter 5">Meter 5</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </mat-card>
+    <mat-card>
+        <div class="energy">
+            <div><span class="edetail">Energy :</span><span>156,610 kWh</span></div>
+            <div><span class="edetail">Last Updated :</span><span>{{date}}</span></div>
+            <div><span class="edetail">Next Hour Predicted Energy :</span><span>156,610 kWh</span></div>
+        </div>
+    </mat-card>
+    <mat-card>
+        <div><strong>Key Parameters</strong></div>
+        <div class="energy">
+            <div class="chart-container">
+                <canvas id="voltage"></canvas>
+            </div>
+            <div class="chart-container" width="600px" height="500px">
+                <canvas id="current"></canvas>
+            </div>
+            <div class="chart-container" width="600px" height="500px">
+                <canvas id="power"></canvas>
+            </div>
+            <div class="chart-container" width="600px" height="500px">
+                <canvas id="powerFactor"></canvas>
+            </div>
+            <div class="chart-container" width="600px" height="500px">
+                <canvas id="frequency"></canvas>
+            </div>
+        </div>
+    </mat-card>
+    <div class="charts">
+        <div class="chart1">
+            <mat-card>
+                <div class="chart-container" width="600px" height="500px">
+                    <canvas id="powerLine"></canvas>
+                </div>
+            </mat-card>
+        </div>
+        <div class="chart2">
+            <mat-card>
+                <div class="chart-container" width="600px" height="500px">
+                    <canvas id="powerFactorLine"></canvas>
+                </div>
+            </mat-card>
+        </div>
+        <div class="message">
+            <button mat-mini-fab class="theme"><mat-icon>message</mat-icon></button>
+        </div>
+    </div>
+    
+</div>
