@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "/dist/proelium",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
