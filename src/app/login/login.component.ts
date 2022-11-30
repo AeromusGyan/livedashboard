@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   hide = true;
 
   loginForm:any = new FormGroup({
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
     }
     else{
       alert(JSON.stringify(this.loginForm.value))
-      window.location.href = "/dashboard"
+      this.router.navigate(["/dashboard"]);
     }
   }
 }
