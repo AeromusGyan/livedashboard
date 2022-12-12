@@ -1,18 +1,24 @@
 
 .main{
+    width: 100%;
     padding-left: 10px;
     padding-right: 10px;
-    height: 100%;
+    min-height: 100%;
     background-color: rgb(182, 204, 203);
 }
+
 .main mat-card{
     margin-bottom: 10px;
+}
+.drop{
+    width: 100%;
 }
 .charts{
     width: 100%;
     min-height: 400px;
     float: left;
 }
+
 .charts .chart1{
     width: 49.5%;
     float: left;
@@ -22,38 +28,125 @@
     width: 49.7%;
     float: left;
 }
-.drop {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.drop .select{
+
+.floor .select{
     margin-left: 50px;
     margin-right: 10px;
     font-weight: bold;
     text-transform: uppercase;
 }
-.drop mat-form-field{
-    padding: 0px;
-    padding-bottom: 0px;
+.drop mat-card{
+    width: 100%;
+    height: 80px;
+    padding: 0;
 }
-.main> mat-card:first-child{
-    padding-top: 5px;
-}
-.energy{
-    display: flex;
-    justify-content: center;
-    justify-content:space-evenly;
-    font-weight: bold;
+.drop mat-card .floor{
+    width: 25%;
+    float: left;
+    padding-left: 0px;
 }
 
+.detail {
+    width: 100%;
+}
+.detail  mat-card{
+    width: 100%;
+    height: 50px;
+    padding: 0;
+}
+.energy div{
+    width: 30%;
+    float: left;
+    padding: 15px;
+}
 .energy .edetail{
     font-weight: bold;
     text-transform: uppercase;
 }
 .energy span:last-child{
+    font-weight: bold;
     color: red;
+} 
+.gauge{
+    width: 100%;
+}
+.gauge mat-card{
+    width: 100%;
+    height: 120px;
+    padding: 0;
+}
+.gauge .energy div{
+    width: 19%;
+    float: left;
+    padding: 5px;
 }
 .message{
     float: right;
 }
+
+@media screen and (max-width: 500px) {
+    .main{
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 100%;
+        min-height: 100%;
+        background-color: rgb(182, 204, 203);
+    }
+    
+    .charts .chart1{
+        width: 100%;
+        float: left;
+    }
+    .charts .chart2{
+        width: 100%;
+        float: left;
+    }
+    .drop mat-card{
+        width: 100%;
+        height: 350px;
+        padding: 0;
+    }
+   .drop mat-card .floor{
+    float: left;
+    width: 100%;
+    padding-left: 0px;
+    }
+    .drop mat-card .floor  mat-form-field{
+        width: 100%;
+    }
+    .floor .select{
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    .detail  mat-card{
+        width: 100%;
+        height: 100px;
+        padding: 0;
+    }
+    .energy div{
+        width: 100%;
+        float: left;
+        padding: 5px;
+    }
+    .detail .energy{
+        padding: 10px;
+    }
+    .energy .edetail{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .gauge mat-card{
+        width: 100%;
+        height: 700px;
+        padding: 0;
+        padding-bottom: 10px;
+    }
+    .gauge .energy div{
+        width: 100%;
+        float: left;
+        padding: 5px;
+    }
+    .gauge mat-card div strong{
+        margin-left: 10px;
+    }
+  }

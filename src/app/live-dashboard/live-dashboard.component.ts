@@ -27,11 +27,6 @@ export class LiveDashboardComponent implements OnInit {
 
   constructor() { }
 
-  foods: Food[] = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' },
-  ];
   ngOnInit(): void {
     this.voltageChart();
     this.currentChart();
@@ -283,7 +278,7 @@ export class LiveDashboardComponent implements OnInit {
       this.frequency.update();
     }, 2000);
   }
-  scroller(scroll: any, chart: any) {
+  scroller(scroll: any) {
     // console.log(scroll);
     const dataLength = this.powerLine.data.labels.length;
     
@@ -372,7 +367,7 @@ export class LiveDashboardComponent implements OnInit {
       this.powerLine.update();
     }, 2000);
     this.powerLine.canvas.addEventListener('wheel', (e: any) => {
-      this.scroller(e, this.powerLine);
+      this.scroller(e);
     })
     setTimeout(() => {
       setInterval(() => {
@@ -383,7 +378,7 @@ export class LiveDashboardComponent implements OnInit {
     }, 14000);
   }
 
-  scrollerPF(scroll: any, chart: any) {
+  scrollerPF(scroll: any) {
     // console.log(scroll);
     const dataLength = this.powerFactorLine.data.labels.length;
     
@@ -470,18 +465,18 @@ export class LiveDashboardComponent implements OnInit {
             beginAtZero: true
           }
         },
-        animation: {
-          onComplete: () => {
-            // delayed = true;
-          },
-          delay: (context) => {
-            let delay = 0;
-            if (context.type === 'data' && context.mode === 'default' && !delay) {
-              delay = context.dataIndex * 300 + context.datasetIndex * 100;
-            }
-            return delay;
-          },
-        },
+        // animation: {
+        //   onComplete: () => {
+        //     // delayed = true;
+        //   },
+        //   delay: (context) => {
+        //     let delay = 0;
+        //     if (context.type === 'data' && context.mode === 'default' && !delay) {
+        //       delay = context.dataIndex * 300 + context.datasetIndex * 100;
+        //     }
+        //     return delay;
+        //   },
+        // },
       }
 
     }
@@ -495,7 +490,7 @@ export class LiveDashboardComponent implements OnInit {
       this.powerFactorLine.update();
     }, 2000);
     this.powerFactorLine.canvas.addEventListener('wheel', (e: any) => {
-      this.scrollerPF(e, this.powerFactorLine);
+      this.scrollerPF(e);
     })
     setTimeout(() => {
       setInterval(() => {
